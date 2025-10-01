@@ -15,45 +15,48 @@ export default function FormularioCadastro() {
     };
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)} className="formulario">
-            <div>
-                <label htmlFor="nome">Nome Completo</label>
-                <input
-                    id="nome"
-                    className="campo"
-                    {...register("nome", { required: "O nome é obrigatório" })}
-                />
-                {errors.nome && <p className="erro">{errors.nome.message}</p>}
-            </div>
+        <div className="formulario-container">
+            <h2>Cadastro</h2> 
+                <form onSubmit={handleSubmit(onSubmit)} className="formulario">
+                    <div>
+                        <label htmlFor="nome" className="caixa">Nome Completo</label>
+                        <input
+                            id="nome"
+                            className="campo"
+                            {...register("nome", { required: "O nome é obrigatório" })}
+                        />
+                        {errors.nome && <p className="erro">{errors.nome.message}</p>}
+                    </div>
 
-            <div>
-                <label htmlFor="nomeUsuario">Nome de Usuário</label>
-                <input
-                    id="nomeUsuario"
-                    className="campo"
-                    {...register("nomeUsuario", { required: "O nome de usuário é obrigatório" })}
-                />
-                {errors.nomeUsuario && <p className="erro">{errors.nomeUsuario.message}</p>}
-            </div>
+                    <div>
+                        <label htmlFor="nomeUsuario" className="caixa">Nome de Usuário</label>
+                        <input
+                            id="nomeUsuario"
+                            className="campo"
+                            {...register("nomeUsuario", { required: "O nome de usuário é obrigatório" })}
+                        />
+                        {errors.nomeUsuario && <p className="erro">{errors.nomeUsuario.message}</p>}
+                    </div>
 
-            <div>
-                <label htmlFor="email">Email</label>
-                <input
-                    id="email"
-                    type="email"
-                    className="campo"
-                    {...register("email", {
-                        required: "O email é obrigatório",
-                        pattern: {
-                            value: /^\S+@\S+$/i,
-                            message: "Insira um email válido"
-                        }
-                    })}
-                />
-                {errors.email && <p className="erro">{errors.email.message}</p>}
-            </div>
+                    <div>
+                        <label htmlFor="email" className="caixa">Email</label>
+                        <input
+                            id="email"
+                            type="email"
+                            className="campo"
+                            {...register("email", {
+                                required: "O email é obrigatório",
+                                pattern: {
+                                    value: /^\S+@\S+$/i,
+                                    message: "Insira um email válido"
+                                }
+                            })}
+                        />
+                        {errors.email && <p className="erro">{errors.email.message}</p>}
+                    </div>
 
-            <button type="submit" className="botao-cadastro">Cadastrar</button>
-        </form>
+                    <button type="submit" className="botao-cadastro">Cadastrar</button>
+                </form>
+            </div>
     );
 }
