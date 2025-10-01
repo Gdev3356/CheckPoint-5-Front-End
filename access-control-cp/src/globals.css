@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+@layer{
+    main{
+        @apply flex-1 p-5 box-border flex flex-col items-center w-full relative max-sm:pt-14; 
+    };
+}
