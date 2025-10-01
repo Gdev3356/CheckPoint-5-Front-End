@@ -10,8 +10,22 @@ type Inputs = {
 export default function FormularioLogin() {
     const { register, handleSubmit, formState: { errors } } = useForm<Inputs>();
 
-    const onSubmit: SubmitHandler<Inputs> = (data) => {
-        console.log("Dados do formulário de login:", data);
+        const onSubmit: SubmitHandler<Inputs> = async (data) => {
+        try {
+            const response = await fetch(`http://localhost:4000/usuarios?nomeUsuario=${data.nomeUsuario}&email=${data.email}`);
+            const user = await response.json();
+
+            if (user.length > 0) {
+                alert("Login realizado com sucesso!");
+                sessionStorage.setItem("usuarioLogado", JSON.stringify(user[0]));
+                window.location.reload(); 
+            } else {
+                alert("Nome de usuário ou email inválidos.");
+            }
+        } catch (error) {
+            console.error("Falha na comunicação com o servidor:", error);
+            alert("Não foi possível conectar ao servidor.");
+        }
     };
 
     return (

@@ -1,16 +1,22 @@
 {
   "usuarios": [
     {
-      "id": 1,
+      "id": "1",
       "nome": "Kratos",
       "nomeUsuario": "kratos",
       "email": "bomDeGuerra@exemplo.com"
     },
     {
-      "id": 2,
+      "id": "2",
       "nome": "João Pedro",
       "nomeUsuario": "joao",
       "email": "joao@exemplo.com"
+    },
+    {
+      "id": "64a1",
+      "nome": "Gustavo Okada",
+      "nomeUsuario": "Gdev3356",
+      "email": "gko.starkiller@gmail.com"
     }
   ]
 }
