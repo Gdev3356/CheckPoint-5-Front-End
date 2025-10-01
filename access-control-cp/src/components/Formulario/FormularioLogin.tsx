@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form";
 import type { SubmitHandler } from "react-hook-form";
+import { Link } from "react-router-dom";
 
 type Inputs = {
     nomeUsuario: string;
@@ -43,8 +44,10 @@ export default function FormularioLogin() {
                         />
                         {errors.email && <p className="erro">{errors.email.message}</p>}
                     </div>
-
                     <button type="submit" className="botao-login">Entrar</button>
+                    <p>
+                        Ainda não tem uma conta? <Link to="/cadastro">Cadastre-se</Link>
+                    </p>
                 </form>
         </div>
     );
