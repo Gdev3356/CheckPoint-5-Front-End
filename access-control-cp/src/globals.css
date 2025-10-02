@@ -2,8 +2,16 @@
 
 @layer{
 
+    .app-container {
+        @apply flex flex-col min-h-screen;
+    };
+    
     .titulo{
         @apply flex justify-center items-center bg-gray-800 text-white p-4 font-bold text-xl; 
+    };
+
+    .rodape{
+        @apply flex justify-around items-center bg-gray-800 text-white p-4 font-medium text-sm min-h-[60px]; 
     };
 
     body{ 
