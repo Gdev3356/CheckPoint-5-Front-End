@@ -5,17 +5,50 @@
     .app-container {
         @apply flex flex-col min-h-screen;
     };
-    
+
     .titulo{
         @apply flex justify-center items-center bg-gray-800 text-white p-4 font-bold text-xl; 
     };
+    
+    .voltar {
+        @apply absolute text-lg right-5 top-4 text-white bg-none border-none text-inherit font-semibold cursor-pointer no-underline z-50 text-base;
+    };
 
     .rodape{
-        @apply flex justify-around items-center bg-gray-800 text-white p-4 font-medium text-sm min-h-[60px]; 
+        @apply flex justify-around items-center bg-gray-800 text-white p-6 font-medium text-sm min-h-[90px]; 
+    };
+
+    
+    .categoria{
+        @apply flex justify-center items-center absolute text-lg right-1 left-1 text-sm;
     };
 
     body{ 
         @apply min-h-screen bg-gradient-to-r from-blue-500 via-blue-300 to-blue-200;
+    };
+
+    .criador {
+        @apply text-center flex flex-wrap justify-center gap-5 p-5 md:gap-4 md:p-4 sm:gap-3 sm:p-3 max-sm:gap-2 max-sm:p-2;
+    };
+
+    .card_criador {
+        @apply m-6 p-4 bg-[#f3faff] rounded-lg text-center w-60 shadow-[0_0_10px_rgba(0,0,0,0.1)] flex flex-col items-center md:w-52 md:m-4 sm:w-48 sm:m-3 max-sm:w-full max-sm:max-w-[200px] max-sm:m-2 max-sm:p-3;
+
+            img {
+                @apply w-24 h-24 object-cover rounded-lg border-2 border-[#009fdb] mb-2.5 md:w-20 md:h-20 sm:w-16 sm:h-16 max-sm:w-14 max-sm:h-14;
+        }
+    };
+
+    .button {
+        @apply no-underline bg-gradient-to-b from-blue-500 to-blue-300 text-white py-4 px-7 border-none rounded-lg text-xl inline-flex items-center justify-center gap-2 cursor-pointer transition-transform duration-200 ease-in-out text-center hover:scale-110
+           md:py-3 md:px-6 md:text-lg
+           lg:py-4 lg:px-7 lg:text-xl
+           sm:py-3 sm:px-5 sm:text-base
+           max-sm:w-full max-sm:max-w-[280px] max-sm:mx-auto max-sm:text-lg max-sm:py-4;
+
+        &.selected {
+            @apply bg-gradient-to-b from-[#004b75] to-[#002337] text-white;
+        }
     };
 
     main{
